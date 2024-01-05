@@ -15,6 +15,10 @@ public class Phone {
     @Column(name = "ID_PHONE", nullable = false)
     private Long id;
 
+    @Size(max = 20)
+    @Column(name = "NUMBER", length = 20)
+    private String number;
+
     @Size(max = 4)
     @Column(name = "CITY_CODE", length = 4)
     private String cityCode;
@@ -22,10 +26,6 @@ public class Phone {
     @Size(max = 4)
     @Column(name = "COUNTRY_CODE", length = 4)
     private String countryCode;
-
-    @Size(max = 20)
-    @Column(name = "NUMBER", length = 20)
-    private String number;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_USER", referencedColumnName = "ID_USER")

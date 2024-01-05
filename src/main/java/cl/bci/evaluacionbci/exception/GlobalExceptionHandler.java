@@ -2,6 +2,7 @@ package cl.bci.evaluacionbci.exception;
 
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -31,6 +32,13 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Object> handleException(Exception ex) {
         ErrorResponse errorResponse = new ErrorResponse("Se ha producido un error en el servidor.");
         return ResponseEntity.internalServerError().body(errorResponse);
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex) {
+        String error = "Error en el análisis JSON: " + ex.getMessage();
+        ErrorResponse errorResponse = new ErrorResponse(error);
+        return ResponseEntity.badRequest().body(errorResponse);
     }
 
 }

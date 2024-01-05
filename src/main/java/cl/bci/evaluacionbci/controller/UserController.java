@@ -38,7 +38,7 @@ public class UserController {
                             examples = @ExampleObject(
                                     name = "EjemploSignup",
                                     summary = "Ejemplo de Usuario",
-                                    value = "{\"name\": \"Juan Rodriguez\", \"email\": \"juan@rodriguez.org\", \"password\": \"Jr1231\", \"phones\": [{\"number\": \"1234567\", \"citycode\": \"1\", \"countryCode\": \"57\"}]}"
+                                    value = "{\"name\": \"Juan Rodriguez\", \"email\": \"juan@rodriguez.org\", \"password\": \"Jr1231\", \"phones\": [{\"number\": \"1234567\", \"citycode\": \"1\", \"contrycode\": \"57\"}]}"
                             )
                     )
             ),responses = {

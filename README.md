@@ -38,7 +38,7 @@ Para usar la API, puedes realizar solicitudes HTTP a los endpoints definidos. Po
       {
         "number": "1234567",
         "citycode": "1",
-        "countryCode": "57"
+        "contrycode": "57"
       }
     ]
   }
