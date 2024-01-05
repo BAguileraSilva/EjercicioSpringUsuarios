@@ -1,0 +1,11 @@
+package cl.bci.evaluacionbci.exception;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public class ErrorResponse {
+    private String mensaje;
+}
